@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<!-- Twitter bootstrap -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	  
+	    <!-- This is the latest version of angular (at the time this template was created) -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-animate.js"></script>
+	    <script src="js/abn_tree_directive.js"></script>
+	  	<script src="node_modules/date-picker/angular-datepicker.js"></script>
+	  	<link rel="stylesheet" type="text/css" href="node_modules/date-picker/css/default.css">
+	  	<link rel="stylesheet" type="text/css" href="node_modules/date-picker/css/default.date.css">
+	  	<link rel="stylesheet" type="text/css" href="node_modules/date-picker/css/default.time.css">
+	    <link rel="stylesheet" type="text/css" href="js/abn_tree.css">
+	    <link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="script.js"></script>
+
+	</head>
+	<body ng-app="treeDemo">
+		<h1>
+			Tree example
+		</h1>
+		<div class="container">
+			<div class="row">
+				<div ng-controller="tree" class="tree">
+					<abn-tree 
+					    tree-data         = "treedata_avm"
+					    tree-control      = "my_tree"
+					    icon-leaf         = "glyphicon glyphicon-file"
+					    icon-expand       = "glyphicon glyphicon-menu-right"
+					    icon-collapse     = "glyphicon glyphicon-menu-down"
+					    on-select         = "my_tree_handler(branch)"
+					    expand-level      = "3"
+					    initial-selection = "Animal">      
+					></abn-tree>
+				</div>
+			</div>
+			<div class="row">
+				<div ng-controller="editForm">
+					<h1>Ejemplo Formulario Editar Campaña</h1>
+					<form class="form_cliente">
+						<div class="form-group">
+							<label for="frm_name">Nombre:</label>
+							<input type="text" class="form-control" name="frm_name" id="frm_name"/> 
+						</div>
+						<div class="form-group">
+							<label>Fecha Inicio: </label>
+							<input type="date" pick-a-date="date" placeholder="{{ date }}" class="form-inline"/> 
+							<label>Fecha Fin: </label>
+							<input type="date" pick-a-date="date" placeholder="{{ date }}" class="form-inline"/> 
+						</div>
+						<div class="form-group">
+							<label>Placement: </label>
+							<select class="form-control"><option>opt1</option><option>opt2</option></select>
+						</div>
+						<div class="form-group">
+							<label>Presupuesto: </label>
+							<input type="text" class="form-inline" name="frm_amount" id="frm_amount"/>
+							<label>Métrica: </label> 
+							<select class="form-inline"><option>met1</option><option>met2</option></select>
+						</div>
+						<div class="form-group">
+							<label>Segmento: </label>
+							<input type="text" class="form-control" name="frm_segment" id="frm_segment"/> 
+						</div>
+						<div class="form-group">
+							<label>Tipo Comunicación: </label>
+							<select class="form-inline"><option>com1</option><option>com2</option></select>
+						</div>
+						<div class="form-group">
+							<label for="frm_name">Comunicación:</label>
+							<input type="text" class="form-control" name="frm_name" id="frm_name"/> 
+						</div>
+					</form>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>
